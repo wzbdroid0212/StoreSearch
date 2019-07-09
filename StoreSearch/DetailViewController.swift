@@ -21,6 +21,8 @@ class DetailViewController: UIViewController {
     var searchResult: SearchResult!
     var downloadTask: URLSessionDownloadTask?
     
+    
+    
     func updateUI() {
         nameLabel.text = searchResult.name
         if searchResult.artist.isEmpty {
@@ -60,7 +62,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor.clear
         // Do any additional setup after loading the view.
         view.tintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
         popupView.layer.cornerRadius = 10
@@ -94,6 +96,14 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         return DimmingPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return BounceAnimationController()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideOutAnimationController()
     }
 }
 

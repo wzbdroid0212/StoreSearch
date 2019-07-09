@@ -98,6 +98,10 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func performSearch() {
+        if searchBar.text!.isEmpty {
+            return
+        }
+        
         searchBar.resignFirstResponder()
         dataTask?.cancel()
         isLoading = true
