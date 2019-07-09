@@ -13,7 +13,6 @@
 		09DC1B6422CF49DA002D2844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DC1B6322CF49DA002D2844 /* Assets.xcassets */; };
 		09E0C1CE22D2D86900565F92 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E0C1CD22D2D86900565F92 /* SearchResult.swift */; };
 		09E0C1D222D2E36B00565F92 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E0C1D122D2E36B00565F92 /* SearchResultCell.swift */; };
-		09E0C1D622D316FE00565F92 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0C1D522D316FE00565F92 /* LoadingCell.xib */; };
 		09E0C1D822D328C800565F92 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E0C1D722D328C800565F92 /* UIImageView+DownloadImage.swift */; };
 		09E6A95D22D3330C00793EEC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6A95C22D3330C00793EEC /* DetailViewController.swift */; };
 		09E6A95F22D335FA00793EEC /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6A95E22D335FA00793EEC /* DimmingPresentationController.swift */; };
@@ -27,6 +26,7 @@
 		09E6A9A722D4B02500793EEC /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A9A922D4B02500793EEC /* NothingFoundCell.xib */; };
 		09E6A9AC22D4B04900793EEC /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A9AE22D4B04900793EEC /* SearchResultCell.xib */; };
 		09E6A9B322D4B1EC00793EEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A9B522D4B1EC00793EEC /* Localizable.strings */; };
+		09E6A9B722D4B34C00793EEC /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A9B922D4B34C00793EEC /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,6 @@
 		09DC1B6822CF49DA002D2844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09E0C1CD22D2D86900565F92 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		09E0C1D122D2E36B00565F92 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
-		09E0C1D522D316FE00565F92 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		09E0C1D722D328C800565F92 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		09E6A95C22D3330C00793EEC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		09E6A95E22D335FA00793EEC /* DimmingPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
@@ -56,6 +55,8 @@
 		09E6A9B022D4B04D00793EEC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SearchResultCell.strings"; sourceTree = "<group>"; };
 		09E6A9B422D4B1EC00793EEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09E6A9B622D4B1F000793EEC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		09E6A9B822D4B34C00793EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoadingCell.xib; sourceTree = "<group>"; };
+		09E6A9BB22D4B35000793EEC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoadingCell.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +119,7 @@
 				09E6A9A922D4B02500793EEC /* NothingFoundCell.xib */,
 				09E0C1D122D2E36B00565F92 /* SearchResultCell.swift */,
 				09E6A9AE22D4B04900793EEC /* SearchResultCell.xib */,
-				09E0C1D522D316FE00565F92 /* LoadingCell.xib */,
+				09E6A9B922D4B34C00793EEC /* LoadingCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,7 +199,7 @@
 			files = (
 				09DC1B6422CF49DA002D2844 /* Assets.xcassets in Resources */,
 				09E6A9B322D4B1EC00793EEC /* Localizable.strings in Resources */,
-				09E0C1D622D316FE00565F92 /* LoadingCell.xib in Resources */,
+				09E6A9B722D4B34C00793EEC /* LoadingCell.xib in Resources */,
 				09E6A9AC22D4B04900793EEC /* SearchResultCell.xib in Resources */,
 				09E6A9A722D4B02500793EEC /* NothingFoundCell.xib in Resources */,
 				09DC1B6222CF49D9002D2844 /* Main.storyboard in Resources */,
@@ -266,6 +267,15 @@
 				09E6A9B622D4B1F000793EEC /* zh-Hans */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		09E6A9B922D4B34C00793EEC /* LoadingCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09E6A9B822D4B34C00793EEC /* Base */,
+				09E6A9BB22D4B35000793EEC /* zh-Hans */,
+			);
+			name = LoadingCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
