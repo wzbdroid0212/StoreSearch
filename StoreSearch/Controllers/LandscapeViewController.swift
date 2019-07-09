@@ -47,8 +47,37 @@ class LandscapeViewController: UIViewController {
         
         if firstTime {
             firstTime = false
-            tileButtons(search.searchResults)
+            
+            switch search.state {
+            case .notSearchedYet:
+                break
+            case .loading:
+                showSpinner()
+                break
+            case .noResults:
+                showNothingFoundLabel()
+                break
+            case .results(let list):
+                tileButtons(list)
+            }
         }
+    }
+    
+    private func showNothingFoundLabel() {
+        let label = UILabel(frame: CGRect.zero)
+        label.text = "Nothing Found"
+        label.textColor = UIColor.white
+        label.backgroundColor = UIColor.clear
+        label.textAlignment = .center
+        
+        label.sizeToFit()
+        var rect = label.frame
+        rect.size.width = ceil(rect.size.width/2) * 2
+        rect.size.height = ceil(rect.size.height/2) * 2
+        label.frame = rect
+        
+        label.center = CGPoint(x: scrollView.bounds.midX, y: scrollView.bounds.midY)
+        view.addSubview(label)
     }
     
     private func tileButtons(_ searchResults: [SearchResult]) {
@@ -108,7 +137,8 @@ class LandscapeViewController: UIViewController {
             // 1
             let button = UIButton(type: .custom)
             button.setBackgroundImage(UIImage(named: "LandscapeButton"), for: .normal)
-//            button.setTitle("\(index)", for: .normal)
+            button.tag = 2000 + index
+            button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
             
             // 2
             button.frame = CGRect(x: x + paddingHorz, y: marginY + CGFloat(row)*itemHeight + paddingVert, width: buttonWidth, height: buttonHeight)
@@ -153,10 +183,55 @@ class LandscapeViewController: UIViewController {
         }
     }
     
+    private func showSpinner() {
+        let spinner = UIActivityIndicatorView(style: .whiteLarge)
+        spinner.center = CGPoint(x: scrollView.bounds.midX + 0.5, y: scrollView.bounds.midY + 0.5)
+        spinner.tag = 1000
+        view.addSubview(spinner)
+        spinner.startAnimating()
+    }
+    
+    private func hideSpinner() {
+        //        let spinner = view.viewWithTag(1000) as! UIActivityIndicatorView
+        //        spinner.stopAnimating()
+        //        spinner.removeFromSuperview()
+        view.viewWithTag(1000)?.removeFromSuperview()
+    }
+
+    
     @IBAction func pageChanged(_ sender: UIPageControl) {
         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
             self.scrollView.contentOffset = CGPoint(x: self.scrollView.bounds.size.width * CGFloat(sender.currentPage), y: 0)
         }, completion: nil)
+    }
+    
+    func searchResultsRecieved() {
+        hideSpinner()
+        
+        switch search.state {
+        case .notSearchedYet, .loading:
+            break
+        case .noResults:
+            showNothingFoundLabel()
+        case .results(let list):
+            tileButtons(list)
+        }
+    }
+    
+    // 需要定义 #selector 的时候，响应方法必须加上 @objc 前缀
+    @objc func buttonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "ShowDetail", sender: sender)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            if case .results(let list) = search.state {
+                let detailViewController = segue.destination as! DetailViewController
+                let searchResult = list[(sender as! UIButton).tag - 2000]
+                detailViewController.searchResult = searchResult
+            }
+        }
     }
     
     deinit {
