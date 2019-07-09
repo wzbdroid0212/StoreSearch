@@ -22,9 +22,9 @@ class Search {
         var type: String {
             switch self {
             case .all: return ""
-            case .music: return "musicTrack"
-            case .software: return "software"
-            case .ebooks: return "ebook"
+            case .music: return NSLocalizedString("musicTrack", comment:"Localized kind: musicTrack")
+            case .software: return NSLocalizedString("software", comment:"Localized kind: software")
+            case .ebooks: return NSLocalizedString("ebook", comment:"Localized kind: ebook")
             }
         }
     }
