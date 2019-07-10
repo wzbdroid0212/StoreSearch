@@ -27,6 +27,7 @@
 		09E6A9AC22D4B04900793EEC /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A9AE22D4B04900793EEC /* SearchResultCell.xib */; };
 		09E6A9B322D4B1EC00793EEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A9B522D4B1EC00793EEC /* Localizable.strings */; };
 		09E6A9B722D4B34C00793EEC /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E6A9B922D4B34C00793EEC /* LoadingCell.xib */; };
+		09E6A9C022D586AE00793EEC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6A9BF22D586AE00793EEC /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		09E6A9BB22D4B35000793EEC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoadingCell.strings"; sourceTree = "<group>"; };
 		09E6A9BC22D576F100793EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		09E6A9BE22D576F200793EEC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/Info.plist"; sourceTree = "<group>"; };
+		09E6A9BF22D586AE00793EEC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				09E6A96422D3684400793EEC /* SlideOutAnimationController.swift */,
 				09E6A96922D41F7800793EEC /* LandscapeViewController.swift */,
 				09E6A96B22D4312200793EEC /* FadeOutAnimationController.swift */,
+				09E6A9BF22D586AE00793EEC /* MenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09DC1B5F22CF49D9002D2844 /* SearchViewController.swift in Sources */,
+				09E6A9C022D586AE00793EEC /* MenuViewController.swift in Sources */,
 				09E6A95F22D335FA00793EEC /* DimmingPresentationController.swift in Sources */,
 				09E6A96C22D4312200793EEC /* FadeOutAnimationController.swift in Sources */,
 				09E0C1CE22D2D86900565F92 /* SearchResult.swift in Sources */,
